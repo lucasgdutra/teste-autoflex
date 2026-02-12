@@ -2,12 +2,10 @@ import axios from 'axios';
 
 /**
  * Global Axios Instance for API requests.
- * Pre-configured with the backend Base URL and default JSON headers.
- * 
- * Base URL: http://localhost:8080/api
+ * Uses relative URL so requests go through the nginx reverse proxy.
  */
 const api = axios.create({
-    baseURL: 'http://localhost:8080/api', 
+    baseURL: '/api',
     headers: {
         'Content-Type': 'application/json',
     },
